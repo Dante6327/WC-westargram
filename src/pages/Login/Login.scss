@@ -1,30 +1,10 @@
 //westagram font style import
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
+@import "/src/styles/common.scss";
+@import "/src/styles/variables.scss";
+@import "/src/styles/mixin.scss";
 
-@import "../../styles/common.scss";
-
-//---------------------------common---------------------------
-@mixin flexSort($justifyContants, $alignItems) {
-  display: flex;
-  justify-content: $justifyContants;
-  align-items: $alignItems;
-}
-
-@mixin marginAuto {
-  margin: 0 auto;
-}
-
-//imported from common.scss
-@include globalStyles;
-
-$font-small: 12px;
-$font-middle: 16px;
-$font-large: 24px;
-$font-xlarge: 32px;
-$font-xxlarge: 40px;
-//------------------------------------------------------------
-
-.boxLogin {
+.Login {
   @include flexSort(center, center);
   width: 440px;
   height: 450px;
@@ -68,7 +48,7 @@ $font-xxlarge: 40px;
   }
 
   .txtTitle {
-    font-size: 40px;
+    font-size: $xxlarge;
     font-family: "Lobster", sans-serif;
     font-weight: 200;
 
@@ -109,7 +89,7 @@ $font-xxlarge: 40px;
   }
 
   .txtIsSaveComment {
-    font-size: $font-small;
+    font-size: $small;
     padding: 5px;
   }
 
@@ -127,6 +107,6 @@ $font-xxlarge: 40px;
   .boxForgetPassword {
     margin: 10px;
     text-align: center;
-    font-size: $font-small;
+    font-size: $small;
   }
 }

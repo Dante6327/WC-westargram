@@ -1,13 +1,21 @@
 import "./Login.scss";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
   const [verifyLogin, setVerifyLogin] = useState(false);
+  const navigate = useNavigate();
+
   useEffect(() => {
-    verifyAddress();
-  }, [id, pw, verifyLogin]);
+    if (id.length > 5 && id.includes("@") && pw.length > 5) {
+      setVerifyLogin(true);
+    } else {
+      setVerifyLogin(false);
+    }
+  }, [id, pw]);
+
   const handleChangeId = (e) => {
     setId(e.target.value);
   };
@@ -16,17 +24,17 @@ const Login = () => {
     setPw(e.target.value);
   };
 
-  const verifyAddress = () => {
-    if (id.length > 5 && id.includes("@") && pw.length > 5) {
-      setVerifyLogin(true);
-    } else {
-      setVerifyLogin(false);
+  const Login = (e) => {
+    e.preventDefault();
+
+    if (verifyLogin) {
+      navigate("/main");
     }
   };
 
   return (
     <>
-      <main className="boxLogin">
+      <main className="Login">
         <article className="boxContainer">
           <section className="boxCloseBtnArea">
             <button className="btnClose" />
@@ -63,6 +71,7 @@ const Login = () => {
                   type="submit"
                   className={["btnLogin", verifyLogin].join(" ")}
                   value="로그인"
+                  onClick={Login}
                 />
               </div>
               <div className="boxForgetPassword">

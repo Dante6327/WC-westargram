@@ -1,0 +1,59 @@
+@import "/src/styles/common.scss";
+@import "/src/styles/variables.scss";
+@import "/src/styles/mixin.scss";
+
+.Header {
+  position: fixed;
+  width: 100%;
+
+  .boxContainer {
+    @include flexSort(space-between, center);
+    padding: 20px;
+    margin: 0px 150px;
+    border-bottom: 1px solid black;
+
+    .boxHome {
+      .btnHome {
+        @include btnForIcon("../../../assets/images/instagram.png", $large);
+        padding-right: 40px;
+      }
+
+      .txtHome {
+        font-size: $large;
+        font-family: "Lobster", sans-serif;
+        font-weight: 200;
+        padding: 10px;
+        border-left: 1px solid black;
+      }
+    }
+
+    .boxSearch {
+      .inputSearch {
+        @include btnForIcon("../../../assets/images/search.png", $middle);
+        background-position: 20%;
+        text-align: center;
+        height: $large;
+        border: 1px solid black;
+        border-radius: 15px;
+        width: 150%;
+      }
+    }
+
+    .boxNavigation {
+      .btnCompass {
+        @include btnForIcon("../../../assets/images/compass.png", $large);
+        margin: 0px 10px;
+      }
+
+      .btnHeart {
+        @include btnForIcon("../../../assets/images/heart.png", $large);
+        margin: 0px 10px;
+      }
+
+      .btnAccount {
+        @include btnForIcon("../../../assets/images/account.png", $large);
+        margin: 0px 10px;
+      }
+    }
+  }
+}

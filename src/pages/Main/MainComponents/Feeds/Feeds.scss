@@ -1,0 +1,19 @@
+@import "/src/styles/common.scss";
+@import "/src/styles/variables.scss";
+@import "/src/styles/mixin.scss";
+
+.Feeds {
+  padding: 50px 50px;
+
+  .boxFeedTop {
+    @include flexSort(space-between, center);
+    width: 550px;
+
+    .boxFeedTitleUserImg {
+      @include btnForUserIcon("../../../../assets/images/me.jpg", $xxlarge);
+    }
+
+    .boxFeedTitleUserNickName {
+    }
+  }
+}
