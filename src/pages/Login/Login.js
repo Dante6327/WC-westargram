@@ -1,34 +1,34 @@
-import "./Login.scss";
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import './Login.scss';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [id, setId] = useState("");
-  const [pw, setPw] = useState("");
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
   const [verifyLogin, setVerifyLogin] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (id.length > 5 && id.includes("@") && pw.length > 5) {
+    if (id.length > 5 && id.includes('@') && pw.length > 5) {
       setVerifyLogin(true);
     } else {
       setVerifyLogin(false);
     }
   }, [id, pw]);
 
-  const handleChangeId = (e) => {
+  const handleChangeId = e => {
     setId(e.target.value);
   };
 
-  const handleChangePw = (e) => {
+  const handleChangePw = e => {
     setPw(e.target.value);
   };
 
-  const Login = (e) => {
+  const Login = e => {
     e.preventDefault();
 
     if (verifyLogin) {
-      navigate("/main");
+      navigate('/main');
     }
   };
 
@@ -69,7 +69,7 @@ const Login = () => {
               <div className="boxLoginBtn">
                 <input
                   type="submit"
-                  className={["btnLogin", verifyLogin].join(" ")}
+                  className={['btnLogin', verifyLogin].join(' ')}
                   value="로그인"
                   onClick={Login}
                 />

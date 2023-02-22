@@ -1,7 +1,7 @@
-import React from "react";
-import "./Main.scss";
-import Header from "./MainComponents/Header";
-import MainContents from "./MainComponents/MainContents";
+import React from 'react';
+import './Main.scss';
+import Header from './MainComponents/Header';
+import MainContents from './MainComponents/MainContents';
 
 const Main = () => {
   return (

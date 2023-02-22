@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import "./Feeds.scss";
-import feedImg from "assets/images/yoon.jpg";
+import React, { useState } from 'react';
+import './Feeds.scss';
+import feedImg from 'assets/images/yoon.jpg';
 
 const Feeds = () => {
   const [isActive, setIsActive] = useState(false);
 
   const handleActive = () => {
-    setIsActive((isActive) => !isActive);
+    setIsActive(isActive => !isActive);
   };
   return (
     <article className="feeds">
@@ -25,7 +25,7 @@ const Feeds = () => {
           <div className="boxMainIconWrapper">
             <div className="boxPostsRelatedIcons">
               <button
-                className={isActive ? "btnFillHeartIcon" : "btnHeartIcon"}
+                className={isActive ? 'btnFillHeartIcon' : 'btnHeartIcon'}
                 onClick={handleActive}
               />
               <button className="btnChatIcon" />

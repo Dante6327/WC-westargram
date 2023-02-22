@@ -1,6 +1,6 @@
-import React from "react";
-import Feeds from "./Feeds/Feeds";
-import "./MainContents.scss";
+import React from 'react';
+import Feeds from './Feeds/Feeds';
+import './MainContents.scss';
 
 const MainContents = () => {
   return (
