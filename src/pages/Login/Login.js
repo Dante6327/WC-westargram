@@ -34,7 +34,7 @@ const Login = () => {
 
   return (
     <>
-      <main className="Login">
+      <main className="login">
         <article className="boxContainer">
           <section className="boxCloseBtnArea">
             <button className="btnClose" />

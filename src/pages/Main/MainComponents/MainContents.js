@@ -4,7 +4,7 @@ import "./MainContents.scss";
 
 const MainContents = () => {
   return (
-    <main className="Article">
+    <main className="mainContents">
       <Feeds />
     </main>
   );

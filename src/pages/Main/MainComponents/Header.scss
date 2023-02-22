@@ -2,9 +2,10 @@
 @import "/src/styles/variables.scss";
 @import "/src/styles/mixin.scss";
 
-.Header {
+.header {
   position: fixed;
   width: 100%;
+  background-color: white;
 
   .boxContainer {
     @include flexSort(space-between, center);

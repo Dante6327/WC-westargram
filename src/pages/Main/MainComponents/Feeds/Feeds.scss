@@ -2,18 +2,139 @@
 @import "/src/styles/variables.scss";
 @import "/src/styles/mixin.scss";
 
-.Feeds {
-  padding: 50px 50px;
+.feeds {
+  padding: 20px 40px 0px 40px;
 
-  .boxFeedTop {
-    @include flexSort(space-between, center);
+  .boxFeedContainer {
     width: 550px;
 
-    .boxFeedTitleUserImg {
-      @include btnForUserIcon("../../../../assets/images/me.jpg", $xxlarge);
+    .boxTop {
+      @include flexSort(space-between, center);
+      width: 550px;
+
+      .boxTitleWrapper {
+        @include flexSort(start, center);
+
+        .btnTitleUserIcon {
+          @include btnForUserIcon("../../../../assets/images/me.jpg", $xxlarge);
+        }
+
+        .txtTitleUserNickName {
+          padding-left: 10px;
+          font-weight: bold;
+          float: left;
+        }
+      }
+
+      .boxTitleMoreWrapper {
+        float: right;
+        .btnTitleMoreIcon {
+          @include btnForIcon("../../../../assets/images/more.png", $large);
+        }
+      }
     }
 
-    .boxFeedTitleUserNickName {
+    .boxMain {
+      .imgFeed {
+        width: 100%;
+        display: block;
+        padding: 20px 0px;
+      }
+
+      .boxMainIconWrapper {
+        .boxPostsRelatedIcons {
+          background-color: antiquewhite;
+          float: left;
+          position: relative;
+
+          .btnHeartIcon {
+            position: absolute;
+            @include btnForIcon(
+              "../../../../assets/images/emptyHeart.png",
+              $large
+            );
+            width: $large;
+          }
+
+          .btnFillHeartIcon {
+            position: absolute;
+            @include btnForIcon(
+              "../../../../assets/images/fillHeart.png",
+              $large
+            );
+            width: $large;
+          }
+
+          .btnChatIcon {
+            position: absolute;
+            @include btnForIcon("../../../../assets/images/chat.png", $large);
+            width: $large;
+            left: 30px;
+          }
+
+          .btnShareIcon {
+            position: absolute;
+            @include btnForIcon("../../../../assets/images/share.png", $large);
+            width: $large;
+            left: 60px;
+          }
+        }
+        .boxBookmark {
+          background-color: bisque;
+          float: right;
+          position: relative;
+
+          .btnBookmarkIcon {
+            position: absolute;
+            @include btnForIcon(
+              "../../../../assets/images/bookmark.png",
+              $large
+            );
+            width: $large;
+            right: 5px;
+          }
+        }
+      }
+    }
+    .boxReply {
+      margin-top: 50px;
+
+      .boxHowManyGood {
+        @include flexSort(start, center);
+        padding-bottom: 20px;
+
+        .btnMainUserIcon {
+          @include btnForUserIcon("../../../../assets/images/me.jpg", $large);
+        }
+
+        .txtMainUserNickName {
+          padding-left: 10px;
+          font-weight: 600;
+        }
+      }
+
+      .boxContents {
+        padding-left: 5px;
+        font-size: $middle;
+      }
+
+      .boxReplyWrapper {
+        margin: 20px 0px;
+        position: relative;
+
+        .inputReply {
+          border-top: none;
+          border-right: none;
+          border-left: none;
+          padding: 10px;
+          width: 100%;
+        }
+
+        .enterReply {
+          position: absolute;
+          right: 5px;
+        }
+      }
     }
   }
 }
