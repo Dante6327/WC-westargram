@@ -131,8 +131,13 @@
         }
 
         .enterReply {
+          @include btnStyleRemove;
           position: absolute;
+          top: 5px;
           right: 5px;
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }
