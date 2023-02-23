@@ -69,7 +69,7 @@ const Login = () => {
               <div className="boxLoginBtn">
                 <input
                   type="submit"
-                  className={['btnLogin', verifyLogin].join(' ')}
+                  className={verifyLogin ? 'btnLogin true' : 'btnLogin'}
                   value="로그인"
                   onClick={Login}
                 />

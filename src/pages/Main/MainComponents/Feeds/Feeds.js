@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Feeds.scss';
-import feedImg from 'assets/images/yoon.jpg';
+import feedImg from '../../../../assets/images/yoon.jpg';
 
 const Feeds = () => {
   const [isActive, setIsActive] = useState(false);
