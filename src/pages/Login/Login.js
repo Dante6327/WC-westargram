@@ -20,7 +20,7 @@ const Login = () => {
     setId(e.target.value);
   };
 
-  const handleChangePw = e => {
+  const saveUserPw = e => {
     setPw(e.target.value);
   };
 
