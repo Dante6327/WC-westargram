@@ -16,7 +16,7 @@ const Login = () => {
     }
   }, [id, pw]);
 
-  const handleChangeId = e => {
+  const saveUserId = e => {
     setId(e.target.value);
   };
 
@@ -49,7 +49,7 @@ const Login = () => {
                   type="text"
                   placeholder="전화번호, 사용자 이름 또는 이메일"
                   className="inputId"
-                  onChange={handleChangeId}
+                  onChange={saveUserId}
                   value={id}
                 />
               </div>
@@ -58,7 +58,7 @@ const Login = () => {
                   type="password"
                   placeholder="비밀번호"
                   className="InputPw"
-                  onChange={handleChangePw}
+                  onChange={saveUserPw}
                   value={pw}
                 />
               </div>
