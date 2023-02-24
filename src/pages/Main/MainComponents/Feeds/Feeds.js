@@ -4,9 +4,30 @@ import feedImg from '../../../../assets/images/yoon.jpg';
 
 const Feeds = () => {
   const [isActive, setIsActive] = useState(false);
+  const [reply, setReply] = useState('');
+  const [replyArr, setReplyArr] = useState([]);
+  const [openReply, setOpenReply] = useState(false);
 
   const handleActive = () => {
     setIsActive(isActive => !isActive);
+  };
+
+  const handleKeyDown = e => {
+    if (e.key === 'Enter' && reply) {
+      setReplyArr([...replyArr, reply]);
+      setReply('');
+    }
+  };
+
+  const handleClick = () => {
+    if (reply) {
+      setReplyArr([...replyArr, reply]);
+      setReply('');
+    }
+  };
+
+  const handleChange = e => {
+    setReply(e.target.value);
   };
   return (
     <article className="feeds">
@@ -50,8 +71,36 @@ const Feeds = () => {
           </p>
 
           <div className="boxReplyWrapper">
-            <input type="text" placeholder="댓글 작성" className="inputReply" />
-            <button className="enterReply">게시</button>
+            <div className="boxReplyArea">
+              <p className="boxShowMore">
+                <span className="txtReplyCnt">댓글 {replyArr.length}개</span>
+                <button
+                  className="btnShowMore"
+                  onClick={() => setOpenReply(!openReply)}
+                >
+                  ...더 보기
+                </button>
+              </p>
+              <div className={`boxReplyShowHide ${openReply}`}>
+                {replyArr.map((reply, index) => (
+                  <p key={index}>
+                    <b>jinp1993</b>&nbsp;&nbsp;&nbsp;
+                    {reply}
+                  </p>
+                ))}
+              </div>
+            </div>
+            <input
+              type="text"
+              placeholder="댓글 작성"
+              onChange={handleChange}
+              onKeyDown={handleKeyDown}
+              className="inputReply"
+              value={reply}
+            />
+            <button className="enterReply" onClick={handleClick}>
+              게시
+            </button>
           </div>
         </section>
       </div>

@@ -1,6 +1,6 @@
-@import "/src/styles/common.scss";
-@import "/src/styles/variables.scss";
-@import "/src/styles/mixin.scss";
+@import '/src/styles/common.scss';
+@import '/src/styles/variables.scss';
+@import '/src/styles/mixin.scss';
 
 .feeds {
   padding: 20px 40px 0px 40px;
@@ -13,10 +13,10 @@
       width: 550px;
 
       .boxTitleWrapper {
-        @include flexSort(start, center);
+        @include flexSort(null, center);
 
         .btnTitleUserIcon {
-          @include btnForUserIcon("../../../../assets/images/me.jpg", $xxlarge);
+          @include btnForUserIcon('../../../../assets/images/me.jpg', $xxlarge);
         }
 
         .txtTitleUserNickName {
@@ -29,7 +29,7 @@
       .boxTitleMoreWrapper {
         float: right;
         .btnTitleMoreIcon {
-          @include btnForIcon("../../../../assets/images/more.png", $large);
+          @include btnForIcon('../../../../assets/images/more.png', $large);
         }
       }
     }
@@ -50,7 +50,7 @@
           .btnHeartIcon {
             position: absolute;
             @include btnForIcon(
-              "../../../../assets/images/emptyHeart.png",
+              '../../../../assets/images/emptyHeart.png',
               $large
             );
             width: $large;
@@ -59,7 +59,7 @@
           .btnFillHeartIcon {
             position: absolute;
             @include btnForIcon(
-              "../../../../assets/images/fillHeart.png",
+              '../../../../assets/images/fillHeart.png',
               $large
             );
             width: $large;
@@ -67,14 +67,14 @@
 
           .btnChatIcon {
             position: absolute;
-            @include btnForIcon("../../../../assets/images/chat.png", $large);
+            @include btnForIcon('../../../../assets/images/chat.png', $large);
             width: $large;
             left: 30px;
           }
 
           .btnShareIcon {
             position: absolute;
-            @include btnForIcon("../../../../assets/images/share.png", $large);
+            @include btnForIcon('../../../../assets/images/share.png', $large);
             width: $large;
             left: 60px;
           }
@@ -87,7 +87,7 @@
           .btnBookmarkIcon {
             position: absolute;
             @include btnForIcon(
-              "../../../../assets/images/bookmark.png",
+              '../../../../assets/images/bookmark.png',
               $large
             );
             width: $large;
@@ -100,11 +100,11 @@
       margin-top: 50px;
 
       .boxHowManyGood {
-        @include flexSort(start, center);
+        @include flexSort(null, center);
         padding-bottom: 20px;
 
         .btnMainUserIcon {
-          @include btnForUserIcon("../../../../assets/images/me.jpg", $large);
+          @include btnForUserIcon('../../../../assets/images/me.jpg', $large);
         }
 
         .txtMainUserNickName {
@@ -122,6 +122,27 @@
         margin: 20px 0px;
         position: relative;
 
+        .boxReplyArea {
+          padding: 20px;
+
+          .boxShowMore {
+            height: 20px;
+            .btnShowMore {
+              float: right;
+              @include btnStyleRemove;
+              color: #c0c0c0;
+            }
+          }
+        }
+
+        .boxReplyShowHide {
+          padding: 20px 0px;
+          display: none;
+
+          &.true {
+            display: block;
+          }
+        }
         .inputReply {
           border-top: none;
           border-right: none;
@@ -133,7 +154,7 @@
         .enterReply {
           @include btnStyleRemove;
           position: absolute;
-          top: 5px;
+          bottom: 10px;
           right: 5px;
           &:hover {
             cursor: pointer;
