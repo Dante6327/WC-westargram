@@ -1,15 +1,17 @@
 import React from 'react';
 import './Main.scss';
-import Header from './MainComponents/Header';
-import MainContents from './MainComponents/MainContents';
+import Feeds from './MainComponents/Feeds/Feeds';
+import Header from './MainComponents/Header/Header';
 
 const Main = () => {
   return (
     <div className="main">
       <Header />
-      <MainContents />
-      <MainContents />
-      <MainContents />
+      <div className="feeds">
+        <Feeds />
+        <Feeds />
+        <Feeds />
+      </div>
     </div>
   );
 };

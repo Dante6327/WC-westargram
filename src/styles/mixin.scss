@@ -36,6 +36,11 @@
   }
 }
 
+@mixin btnIconSize($size) {
+  width: $size;
+  height: $size;
+}
+
 @mixin btnStyleRemove {
   border: none;
   background-color: transparent;

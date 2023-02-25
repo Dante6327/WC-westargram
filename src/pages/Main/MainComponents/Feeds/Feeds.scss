@@ -131,7 +131,20 @@
               float: right;
               @include btnStyleRemove;
               color: #c0c0c0;
+
+              &:hover {
+                cursor: pointer;
+              }
             }
+          }
+        }
+
+        .reply {
+          padding-top: 20px;
+          display: none;
+
+          &.true {
+            display: block;
           }
         }
 

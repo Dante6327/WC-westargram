@@ -8,6 +8,7 @@ const Feeds = () => {
   const [reply, setReply] = useState('');
   const [replyArr, setReplyArr] = useState([]);
   const [openReply, setOpenReply] = useState(false);
+  const [replyCount, setReplyCount] = useState(0);
 
   const handleActive = () => {
     setIsActive(isActive => !isActive);
@@ -15,14 +16,16 @@ const Feeds = () => {
 
   const handleKeyDown = e => {
     if (e.key === 'Enter' && reply) {
-      setReplyArr([...replyArr, reply]);
+      setReplyArr([...replyArr, { reply, replyCount }]);
+      setReplyCount(replyCount + 1);
       setReply('');
     }
   };
 
   const handleClick = () => {
     if (reply) {
-      setReplyArr([...replyArr, reply]);
+      setReplyArr([...replyArr, { reply, replyCount }]);
+      setReplyCount(replyCount + 1);
       setReply('');
     }
   };
@@ -73,16 +76,28 @@ const Feeds = () => {
 
           <div className="boxReplyWrapper">
             <div className="boxReplyArea">
-              <p className="boxShowMore">
-                <span className="txtReplyCnt">댓글 {replyArr.length}개</span>
-                <button
-                  className="btnShowMore"
-                  onClick={() => setOpenReply(!openReply)}
-                >
-                  ...더 보기
-                </button>
-              </p>
-              <Reply openReply={openReply} replyArr={replyArr} />
+              {replyArr.length > 0 && (
+                <p className="boxShowMore">
+                  <span className="txtReplyCnt">댓글 {replyArr.length}개</span>
+                  <button
+                    className="btnShowMore"
+                    onClick={() => setOpenReply(!openReply)}
+                  >
+                    ...더 보기
+                  </button>
+                </p>
+              )}
+
+              <div className={`reply ${openReply}`}>
+                {replyArr.map(reply => (
+                  <Reply
+                    reply={reply}
+                    key={reply.replyCount}
+                    replyArr={replyArr}
+                    setReplyArr={setReplyArr}
+                  />
+                ))}
+              </div>
             </div>
             <input
               type="text"

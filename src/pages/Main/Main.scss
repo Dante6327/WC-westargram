@@ -1,2 +1,8 @@
-@import "/src/styles/common.scss";
+@import '/src/styles/common.scss';
 @include globalStyles;
+
+.main {
+  .feeds {
+    padding: 50px 100px;
+  }
+}

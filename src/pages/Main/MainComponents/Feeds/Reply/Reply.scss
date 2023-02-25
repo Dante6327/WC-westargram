@@ -1,8 +1,19 @@
-.reply {
-  padding: 40px 0px;
-  display: none;
+@import '/src/styles/common.scss';
+@import '/src/styles/variables.scss';
+@import '/src/styles/mixin.scss';
 
-  &.true {
-    display: block;
+.txtReplyId {
+  float: left;
+}
+.btnGoodAndDelete {
+  float: right;
+
+  img {
+    margin: 0px 10px;
+    @include btnIconSize($small);
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
