@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Feeds.scss';
 import feedImg from '../../../../assets/images/yoon.jpg';
+import Reply from './Reply/Reply';
 
 const Feeds = () => {
   const [isActive, setIsActive] = useState(false);
@@ -81,14 +82,7 @@ const Feeds = () => {
                   ...더 보기
                 </button>
               </p>
-              <div className={`boxReplyShowHide ${openReply}`}>
-                {replyArr.map((reply, index) => (
-                  <p key={index}>
-                    <b>jinp1993</b>&nbsp;&nbsp;&nbsp;
-                    {reply}
-                  </p>
-                ))}
-              </div>
+              <Reply openReply={openReply} replyArr={replyArr} />
             </div>
             <input
               type="text"
