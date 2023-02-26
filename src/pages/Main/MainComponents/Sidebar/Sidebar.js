@@ -3,7 +3,7 @@ import './Sidebar.scss';
 import SidebarUser from './SidebarUser/SidebarUser';
 
 const Sidebar = props => {
-  const { type } = props;
+  const { type, data } = props;
 
   return (
     <div className="sidebar">
@@ -14,11 +14,9 @@ const Sidebar = props => {
         <span className="viewAll">모두 보기</span>
       </div>
       <div className="main">
-        <SidebarUser />
-        <SidebarUser />
-        <SidebarUser />
-        <SidebarUser />
-        <SidebarUser />
+        {data.map((userName, index) => (
+          <SidebarUser key={index} userName={userName} />
+        ))}
       </div>
     </div>
   );

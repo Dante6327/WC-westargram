@@ -1,7 +1,9 @@
 import React from 'react';
 import './Header.scss';
 
-const Header = () => {
+const Header = props => {
+  const { userList } = props;
+
   const handleSearch = e => {};
   return (
     <header className="header">
