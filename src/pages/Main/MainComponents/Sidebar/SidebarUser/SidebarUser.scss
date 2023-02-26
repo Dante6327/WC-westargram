@@ -1,0 +1,18 @@
+@import '/src/styles/common.scss';
+@import '/src/styles/variables.scss';
+@import '/src/styles/mixin.scss';
+
+.sidebarUser {
+  @include flexSort(null, center);
+  width: 315px;
+  height: 32px;
+  padding: 8px 0px;
+
+  img {
+    @include iconSize($xlarge);
+  }
+
+  .userName {
+    padding: 10px;
+  }
+}

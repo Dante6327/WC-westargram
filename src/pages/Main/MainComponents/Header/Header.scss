@@ -37,6 +37,14 @@
         border: 1px solid black;
         border-radius: 15px;
         width: 150%;
+
+        &:focus {
+          background-image: none;
+        }
+
+        &:focus::placeholder {
+          color: transparent;
+        }
       }
     }
 

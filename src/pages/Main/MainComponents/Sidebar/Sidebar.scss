@@ -1,1 +1,30 @@
-@import "/src/styles/common.scss";
+@import '/src/styles/common.scss';
+@import '/src/styles/variables.scss';
+@import '/src/styles/mixin.scss';
+
+.sidebar {
+  .top {
+    @include flexSort(space-between, center);
+    width: 350px;
+    height: 50px;
+    font-size: 14px;
+    font-weight: 600;
+
+    .title {
+      color: #909090;
+    }
+
+    .viewAll {
+      color: #262626;
+      font-size: $small;
+      font-weight: 600;
+    }
+  }
+  .main {
+    height: 250px;
+    overflow: scroll;
+    * {
+      margin: 20px 0;
+    }
+  }
+}

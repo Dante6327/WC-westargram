@@ -3,6 +3,19 @@
 
 .main {
   .feeds {
-    padding: 50px 100px;
+    padding: 50px 10%;
+  }
+  .story {
+    position: fixed;
+    float: right;
+    left: 60%;
+    top: 15%;
+  }
+
+  .recommend {
+    position: fixed;
+    float: right;
+    left: 60%;
+    top: 50%;
   }
 }

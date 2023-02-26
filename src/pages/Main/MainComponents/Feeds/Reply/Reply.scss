@@ -10,7 +10,7 @@
 
   img {
     margin: 0px 10px;
-    @include btnIconSize($small);
+    @include iconSize($small);
 
     &:hover {
       cursor: pointer;
